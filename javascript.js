@@ -12,7 +12,10 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection, computerSelection) {
+    
     playerSelection = playerSelection.toLowerCase();
+
+    console.log(`playerSelection is ${playerSelection}`);
 
     if(playerSelection === "rock"){
         if(computerSelection ==="rock"){
@@ -24,6 +27,7 @@ function playRound(playerSelection, computerSelection) {
         if(computerSelection ==="scissors"){
             return 2;
         }
+    }
 
     else if(playerSelection === "paper"){
         if(computerSelection ==="paper"){
@@ -38,6 +42,7 @@ function playRound(playerSelection, computerSelection) {
     }
 
     else if(playerSelection === "scissors"){
+        console.log("here");
         if(computerSelection ==="scissors"){
             return 0;
         }
@@ -47,7 +52,6 @@ function playRound(playerSelection, computerSelection) {
         if(computerSelection ==="paper"){
             return 2;
         }
-    }
     }
 }
 
@@ -66,7 +70,7 @@ function restartGame(e){
 
 function game(e){
     // Check if the play has played 5 rounds
-    if(counter == 4) {
+    if(counter == 5) {
         if(counterHuman > counterComputer) {
             document.getElementById("result").innerHTML = "Human wins!";
         }
@@ -85,10 +89,11 @@ function game(e){
     };
 
     //get inputs
-    console.log(e.target.id);
-    const playerSelection = e.target.id;
+    let playerSelection = e.target.id;
     let computerSelection = getComputerChoice();
     let result = playRound(playerSelection, computerSelection);
+
+    console.log(`playerSelection: ${playerSelection} computerSelection: ${computerSelection}, result is ${result}`);
 
     //check result
     if (result === 0){
