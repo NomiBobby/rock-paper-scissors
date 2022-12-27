@@ -65,6 +65,7 @@ function restartGame(e){
 }
 
 function game(e){
+    // Check if the play has played 5 rounds
     if(counter == 4) {
         if(counterHuman > counterComputer) {
             document.getElementById("result").innerHTML = "Human wins!";
@@ -82,9 +83,14 @@ function game(e){
     else if(counter >4){
         return;
     };
-    const playerSelection = "rock";
+
+    //get inputs
+    console.log(e.target.id);
+    const playerSelection = e.target.id;
     let computerSelection = getComputerChoice();
     let result = playRound(playerSelection, computerSelection);
+
+    //check result
     if (result === 0){
         return;
     }
@@ -94,6 +100,8 @@ function game(e){
     else if (result === 2){
         counterHuman++;
     }
+
+    //update HTML
     document.getElementById("computerScore").innerHTML = counterComputer;
     document.getElementById("humanScore").innerHTML = counterHuman;
     counter++;
@@ -104,4 +112,4 @@ let counterHuman = 0;
 let counterComputer = 0;
 let counter = 0;
 let buttons = Array.from(document.querySelectorAll('button'));
-buttons.forEach(button => button.addEventListener("click", ()=>game()));
+buttons.forEach(button => button.addEventListener("click", (e)=>game(e)));
