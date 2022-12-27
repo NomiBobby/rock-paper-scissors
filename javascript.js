@@ -90,11 +90,9 @@ function game(e){
     }
     else if(result === 1){
         counterComputer++;
-        // console.log(`counterComputer: ${counterComputer}`)
     }
     else if (result === 2){
         counterHuman++;
-        // console.log(`counterHuman: ${counterHuman}`)
     }
     document.getElementById("computerScore").innerHTML = counterComputer;
     document.getElementById("humanScore").innerHTML = counterHuman;
