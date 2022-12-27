@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="header">
+        <div>Rock Paper Scissors</div>
+    </div>
+    
+    <div class="main">
+        <div class="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+        <div class="scoreBoard">
+            <div>
+                <div>Computer</div>
+                <div id="computerScore">0</div>
+            </div>
+            <div>
+                <div>Human</div>
+                <div id="humanScore">0</div>
+            </div>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <div class="footer"></div>
+
 </body>
 </html>
